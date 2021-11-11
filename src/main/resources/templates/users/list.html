@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Good Labs Business</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.bundle.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" />
+    <link
+            rel="stylesheet"
+            th:href="@{webjars/bootstrap-icons/font/bootstrap-icons.css}"
+    />
+    <link rel="stylesheet" th:href="@{/webjars/datatables-bootstap/DT_bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+</head>
+<style>
+    body {
+        background-color: #E6E6FA;
+    }
+</style>
+<body>
+<!-- Navbar-->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #FFFFFF;">
+    <div class="container-fluid">
+
+        <!--offcanvas trigger-->
+
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <span class = "navbar-toggler-icon" data-bs-target="#offcanvasExample"></span>
+        </button>
+        <!--offcanvas trigger-->
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <!--<a class="nav-text active" aria-current="page" href="#">-->
+                <span class="navbar-text fw-bold h2 text-primary me-2 me-auto" style="margin-left: 30px;">SHAHI</span>
+            </li>
+        </ul>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0"></ul>
+            <form class="d-flex justify-content-end">
+                <img th:src="@{images/settings.png}" alt="Avatar Logo" style="height:20px;width:20px;margin-top:5px;margin-right:0px;margin-left:0px;" class="rounded-pill">
+                <img th:src="@{images/images.jpg}" alt="Avatar Logo" style="height:30px;width:30px; margin-right:0px;margin-left:20px" class="rounded-pill">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a
+                                class="nav-link dropdown-toggle ms-2"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false"
+                        >
+
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+<!--offcancanvas menu-->
+
+
+<div class="offcanvas offcanvas-start sidebar-nav bg-primary" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <!--<div class="offcanvas-header">
+
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+      </button>
+    </div>-->
+    <div class="offcanvas-body p-0">
+        <nav class="navbar-dark">
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#" class="nav-link px-3 active">
+                        <span><i class="bi bi-house-door"></i></span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#" class="nav-link px-3 active">
+                        <span class="me-2"><i class="bi bi-columns-gap"></i></span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#" class="nav-link px-3 active">
+                        <span class="me-2"><i class="bi bi-file-earmark-text"></i></span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#" class="nav-link px-3 active">
+                        <span  class="me-2"><i class="bi bi-bell"></i></span>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                <li>
+                    <a href="#" class="nav-link px-3 active">
+                        <span class="me-2"><i class="bi bi-question-circle"></i></span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<!--offcancanvas menu-->
+<main class = "mt-5 pt-3">
+    <div class="container-fluid">
+        <div class = "row">
+            <div class="col-md-4 mb-3">
+                <div class="card text-white h-100" style="background-color: #6ce66c">
+                    <div class="align-self-center h2" style="margin-top: 15px">
+                        <i class="bi bi-file-earmark-plus"></i>
+                    </div>
+
+                    <div class="card-body align-self-center">
+                        <a href="#" class="btn btn-light" style="color: #6ce66c">Case Upload</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 mb-3">
+                <div class="card text-white h-100" style="max-width: 27rem;background-color: #0000cd">
+                    <div class="align-self-center h2" style="margin-top: 15px">
+                        <i class="bi bi-file-earmark-text"></i>
+                    </div>
+
+                    <div class="card-body align-self-center">
+                        <a href="#" class="btn btn-light" style="color: #0000cd">Generate Report</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 mb-3">
+                <div class="card text-white h-100" style="max-width: 27rem;background-color: #FFA500">
+                    <div class="align-self-center h2" style="margin-top: 15px">
+                        <i class="bi bi-envelope-open"></i>
+                    </div>
+
+                    <div class="card-body align-self-center">
+                        <a href="#" class="btn btn-light" style="color: #FFA500">Case Upload</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header container-fluid">
+
+                    <ul class="nav nav-tabs">
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-primary" aria-current="page" href="#">NEW/UNREAD CASES</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">OUTSTANDING AND CLOSED CASES</a>
+                        </li>
+
+
+
+                        <li class="nav-item">
+                            <div>
+                                <button class="btn btn-sm mt-3 mr-3 mx-4" style="position: absolute;
+                                top:0;right: 0;background-color:#FFFFFF;border-color: #D3D3D3">
+                                    Filter<i class="bi bi-funnel px-1"></i>
+                                </button>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+
+                <table
+                        id="example"
+                        class="table table-striped data-table"
+                        style="width: 100%; background-color: #FFFFFF"
+                >
+                    <tr>
+
+                    <div class="row">
+                        <div class="col-md-1">
+                            <!-- table header -->
+                            <th><div class="dropdown">
+                                <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 4rem; font-size:1vw;">
+                                    CASE NO.
+                                </a>
+                                <!-- CASE NO. -->
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </div>
+                            </th>
+                        </div>
+                        <!-- BRANCH -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 4rem; font-size:1vw;">
+                                        BRANCH
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Branch1</a></li>
+                                        <li><a class="dropdown-item" href="#">Branch2</a></li>
+                                        <li><a class="dropdown-item" href="#">Branch3</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </div>
+
+                        <!--REPORTING METHOD -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 9rem; font-size:1vw;">
+                                        REPORTING METHOD
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">In Person</a></li>
+                                        <li><a class="dropdown-item" href="#">Call</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </div>
+
+                        <!--DATE -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 5rem; font-size:1vw;">
+                                        DATE
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Date1</a></li>
+                                        <li><a class="dropdown-item" href="#">Date2</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </div>
+
+                        <!--TIME -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 3rem; font-size:1vw;">
+                                        TIME
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">TIME1</a></li>
+                                        <li><a class="dropdown-item" href="#">TIME2</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </div>
+
+                        <!--CATEGORY -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 5rem; font-size:1vw;">
+                                        CATEGORY
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Grievance</a></li>
+                                        <li><a class="dropdown-item" href="#">Security</a></li>
+                                        <li><a class="dropdown-item" href="#">General</a></li>
+                                        <li><a class="dropdown-item" href="#">Employment</a></li>
+                                    </ul>
+                                </div>
+                            </th></div>
+                        <!--SUB CATEGORY -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 7rem; font-size:1vw;">
+                                        SUB CATEGORY
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Query</a></li>
+                                        <li><a class="dropdown-item" href="#">Complaints</a></li>
+
+                                    </ul>
+                                </div>
+                            </th></div>
+
+                        <!--PRIORITY -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 4rem; font-size:1vw;">
+                                        PRIORITY
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" style="background-color: #fd5b1b" href="#">High</a></li>
+                                        <li><a class="dropdown-item" style="background-color: #FFA500" href="#">Medium</a></li>
+                                        <li><a class="dropdown-item" style="background-color: aqua" href="#">Low</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </div>
+
+                        <!--NATURE -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 4rem; font-size:1vw;">
+                                        NATURE
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Health</a></li>
+                                        <li><a class="dropdown-item" href="#">Transport</a></li>
+                                        <li><a class="dropdown-item" href="#">Property</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </div>
+
+                        <!--CASE MANAGER -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn  dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 7rem; font-size:1vw;">
+                                        CASE MANAGER
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">James</a></li>
+                                        <li><a class="dropdown-item" href="#">Daffel</a></li>
+                                        <li><a class="dropdown-item" href="#">Dane</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </div>
+
+                        <!--CASE REPORTER -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 7rem; font-size:1vw;">
+                                        CASE REPORTER
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Tanner</a></li>
+                                        <li><a class="dropdown-item" href="#">Clinton</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+                        </div>
+
+                        <!--CASE STATUS -->
+                        <div class="col-md-1">
+                            <th>
+                                <div class="dropdown">
+                                    <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 7rem; font-size:1vw;">
+                                        CASE STATUS
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Not Prepared</a></li>
+                                        <li><a class="dropdown-item" href="#">Progress</a></li>
+                                    </ul>
+                                </div>
+                            </th>
+
+                        </div>
+                    </div>
+                    </tr>
+                    <tr th:each="us : ${users}">
+                    <div class="row">
+                       <div class="col-md-1" style="max-width: 4rem; font-size:1vw;">
+                           <td class="px-3" th:text="${us.CaseNo}"  style="max-width: 4rem; font-size:1vw;">123</td>
+                       </div>
+                        <div class="col-md-1">
+                            <td class="px-3" th:text="${us.Branch}" style="max-width: 4rem; font-size:1vw;"> Spring in Action</td>
+                        </div>
+                        <div class="col-md-1" >
+                                <td class="px-3" style="max-width: 9rem; font-size:1vw;" th:text="${us.ReportingMethod}">Wrox</td>
+                        </div>
+                        <div class="col-md-1" >
+                            <td style="max-width: 3rem; font-size:1vw;" th:text="${us.Date}">Wrox</td>
+                        </div>
+                        <div class="col-md-1" >
+                            <td style="max-width: 3rem; font-size:1vw;" th:text="${us.Time}">Wrox</td>
+                        </div>
+                        <div class="col-md-1">
+                            <td>
+                            <div class="dropdown">
+                                <a th:text="${us.Category}" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 5rem; font-size:1vw;">
+
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Grievance</a></li>
+                                    <li><a class="dropdown-item" href="#">Security</a></li>
+                                    <li><a class="dropdown-item" href="#">General</a></li>
+                                    <li><a class="dropdown-item" href="#">Employment</a></li>
+                                </ul>
+                            </div>
+                            </td>
+                        </div>
+
+                        <div class="col-md-1">
+                            <td>
+                                <div class="dropdown">
+                                    <a th:text="${us.SubCategory}" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 5rem; font-size:1vw;">
+
+                                    </a>
+
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Query</a></li>
+                                        <li><a class="dropdown-item" href="#">Complaints</a></li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </div>
+
+                        <div class="col-md-1">
+                            <td>
+                                <div class="btn-group">
+                                    <button th:text="${us.Priority}" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #FFA500;color:#FFFFFF;max-width: 5rem; font-size:1vw;">
+                                        Medium
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" style="background-color: #fd5b1b" href="#">High</a></li>
+                                        <li><a class="dropdown-item" style="background-color: #FFA500" href="#">Medium</a></li>
+                                        <li><a class="dropdown-item" style="background-color: aqua" href="#">Low</a></li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </div>
+
+
+
+                        <div class="col-md-1">
+                            <td>
+                                <div class="dropdown">
+                                    <a th:text="${us.Nature}" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 3rem; font-size:1vw;">
+                                        Transport
+                                    </a>
+
+                                    <ul class="dropdown-menu px-3" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Health</a></li>
+                                        <li><a class="dropdown-item" href="#">Transport</a></li>
+                                        <li><a class="dropdown-item" href="#">Property</a></li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </div>
+
+                        <div class="col-md-1">
+                            <td>
+                                <div class="dropdown  px-4">
+                                    <a th:text="${us.CaseManager}" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 3rem; font-size:1vw;">
+                                        James
+                                    </a>
+
+                                    <ul class="dropdown-menu px-3" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">James</a></li>
+                                        <li><a class="dropdown-item" href="#">Daffel</a></li>
+                                        <li><a class="dropdown-item" href="#">Dane</a></li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </div>
+
+                        <div class="col-md-1">
+                            <td>
+                                <div class="dropdown">
+                                    <a th:text="${us.CaseReporter}" class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 3rem; font-size:1vw;">
+                                        Clinton
+                                    </a>
+
+                                    <ul class="dropdown-menu px-3" aria-labelledby="dropdownMenuLink">
+                                        <li><a class="dropdown-item" href="#">Tanner</a></li>
+                                        <li><a class="dropdown-item" href="#">Clinton</a></li>
+
+                                    </ul>
+                                </div>
+                            </td>
+                        </div>
+                        <div class="col-md-1">
+                            <td style="max-width: 3rem; font-size:1vw;">
+                                <div>
+                          <span class="dot" style="background-color: #fd5b1b;">
+                              </span>
+                                    <span th:text="${us.CaseStatus}"></span>
+
+                                </div>
+                            </td>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    </tr>
+                </table>
+                    <!--Table header -->
+
+            </div>
+        </div>
+    </div>
+
+</main>
+<!--
+<script src="./js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
+<script src="./js/jquery-3.5.1.js"></script>
+<script src="./js/jquery.dataTables.min.js"></script>
+<script src="./js/dataTables.bootstrap5.min.js"></script>
+<script src="./js/script.js"></script>
+-->
+</body>
+</html>
