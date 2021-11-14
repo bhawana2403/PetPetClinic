@@ -2,7 +2,7 @@
 ## Running PetPetClinic Application locally
 Petclinic is a Spring Boot application built using Maven. You can build a jar file and run it from the command line (it should work just as well with Java 8, 11 or 17):
 
-git clone https://github.com/bhawana2403/PetPetClinic.git
+git clone https://github.com/PetPetClinic.git
 ___
 *cd PetPetClinic*
 
