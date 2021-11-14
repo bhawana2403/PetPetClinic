@@ -4,40 +4,42 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Integer CaseNo;
-    private  String Branch;
-    private String ReportingMethod;
-    private String Date;
-    private String Time;
-    private String Category;
-    private String SubCategory;
-    private  String Priority;
-    private String Nature;
-    private String CaseManager;
-    private String CaseReporter;
-    private String CaseStatus;
+    private Integer caseNo;
+    private  String branch;
+    private Category category;
+    private String reportingMethod;
+    private String date;
+    private String time;
+
+    private SubCategory subCategory;
+    private  Priority priority;
+    private Nature nature;
+    private CaseManager caseManager;
+    private String caseReporter;
+    private String caseStatus;
 
     public User() {
     }
 
-    public User(Integer caseNo, String branch, String reportingMethod, String date, String time, String category, String subCategory, String priority, String nature, String caseManager, String caseReporter, String caseStatus) {
-        CaseNo = caseNo;
-        Branch = branch;
-        ReportingMethod = reportingMethod;
-        Date = date;
-        Time = time;
-        Category = category;
-        SubCategory = subCategory;
-        Priority = priority;
-        Nature = nature;
-        CaseManager = caseManager;
-        CaseReporter = caseReporter;
-        CaseStatus = caseStatus;
+    public User(Integer caseNo, String branch, Category category, String reportingMethod, String date, String time, SubCategory subCategory, Priority priority, Nature nature, CaseManager caseManager, String caseReporter, String caseStatus) {
+        this.caseNo = caseNo;
+        this.branch = branch;
+        this.category = category;
+        this.reportingMethod = reportingMethod;
+        this.date = date;
+        this.time = time;
+        this.subCategory = subCategory;
+        this.priority = priority;
+        this.nature = nature;
+        this.caseManager = caseManager;
+        this.caseReporter = caseReporter;
+        this.caseStatus = caseStatus;
     }
 
     public Long getId() {
@@ -49,117 +51,118 @@ public class User {
     }
 
     public Integer getCaseNo() {
-        return CaseNo;
+        return caseNo;
     }
 
     public void setCaseNo(Integer caseNo) {
-        CaseNo = caseNo;
+        this.caseNo = caseNo;
     }
 
     public String getBranch() {
-        return Branch;
+        return branch;
     }
 
     public void setBranch(String branch) {
-        Branch = branch;
+        this.branch = branch;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getReportingMethod() {
-        return ReportingMethod;
+        return reportingMethod;
     }
 
     public void setReportingMethod(String reportingMethod) {
-        ReportingMethod = reportingMethod;
+        this.reportingMethod = reportingMethod;
     }
 
     public String getDate() {
-        return Date;
+        return date;
     }
 
     public void setDate(String date) {
-        Date = date;
+        this.date = date;
     }
 
     public String getTime() {
-        return Time;
+        return time;
     }
 
     public void setTime(String time) {
-        Time = time;
+        this.time = time;
     }
 
-    public String getCategory() {
-        return Category;
+    public SubCategory getSubCategory() {
+        return subCategory;
     }
 
-    public void setCategory(String category) {
-        Category = category;
+    public void setSubCategory(SubCategory subCategory) {
+        this.subCategory = subCategory;
     }
 
-    public String getSubCategory() {
-        return SubCategory;
+    public Priority getPriority() {
+        return priority;
     }
 
-    public void setSubCategory(String subCategory) {
-        SubCategory = subCategory;
+    public void setPriority(Priority priority) {
+        this.priority = priority;
     }
 
-    public String getPriority() {
-        return Priority;
+    public Nature getNature() {
+        return nature;
     }
 
-    public void setPriority(String priority) {
-        Priority = priority;
+    public void setNature(Nature nature) {
+        this.nature = nature;
     }
 
-    public String getNature() {
-        return Nature;
+    public CaseManager getCaseManager() {
+        return caseManager;
     }
 
-    public void setNature(String nature) {
-        Nature = nature;
-    }
-
-    public String getCaseManager() {
-        return CaseManager;
-    }
-
-    public void setCaseManager(String caseManager) {
-        CaseManager = caseManager;
+    public void setCaseManager(CaseManager caseManager) {
+        this.caseManager = caseManager;
     }
 
     public String getCaseReporter() {
-        return CaseReporter;
+        return caseReporter;
     }
 
     public void setCaseReporter(String caseReporter) {
-        CaseReporter = caseReporter;
+        this.caseReporter = caseReporter;
     }
 
     public String getCaseStatus() {
-        return CaseStatus;
+        return caseStatus;
     }
 
     public void setCaseStatus(String caseStatus) {
-        CaseStatus = caseStatus;
+        this.caseStatus = caseStatus;
     }
+
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", CaseNo=" + CaseNo +
-                ", Branch='" + Branch + '\'' +
-                ", ReportingMethod='" + ReportingMethod + '\'' +
-                ", Date='" + Date + '\'' +
-                ", Time='" + Time + '\'' +
-                ", Category='" + Category + '\'' +
-                ", SubCategory='" + SubCategory + '\'' +
-                ", Priority='" + Priority + '\'' +
-                ", Nature='" + Nature + '\'' +
-                ", CaseManager='" + CaseManager + '\'' +
-                ", CaseReporter='" + CaseReporter + '\'' +
-                ", CaseStatus='" + CaseStatus + '\'' +
+                ", caseNo=" + caseNo +
+                ", branch='" + branch + '\'' +
+                ", category=" + category +
+                ", reportingMethod='" + reportingMethod + '\'' +
+                ", date='" + date + '\'' +
+                ", time='" + time + '\'' +
+                ", subCategory=" + subCategory +
+                ", priority=" + priority +
+                ", nature=" + nature +
+                ", caseManager=" + caseManager +
+                ", caseReporter='" + caseReporter + '\'' +
+                ", caseStatus='" + caseStatus + '\'' +
                 '}';
     }
 

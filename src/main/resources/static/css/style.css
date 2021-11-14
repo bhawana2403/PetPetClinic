@@ -17,6 +17,11 @@ button {
     display: inline-block;
 
 }
+.Low{ background-color:green; }
+
+.Medium{ background-color:blue; }
+
+.High{ background-color:red; }
 
 @media (min-width: 992px){
     body{
