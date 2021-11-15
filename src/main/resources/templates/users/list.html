@@ -167,7 +167,7 @@
                     </div>
 
                     <div class="card-body align-self-center">
-                        <a href="#" class="btn btn-light" style="color: #FFA500">Case Upload</a>
+                        <a href="#" class="btn btn-light" style="color: #FFA500">Broadcast Message</a>
                     </div>
                 </div>
             </div>
@@ -195,10 +195,13 @@
 
                         <li class="nav-item">
                             <div>
-                                <button class="btn btn-sm mt-3 mr-3 mx-4" style="position: absolute;
+                                <form th:action="@{/users}" method="get">
+                                    <input class="form-control border rounded-pill search my-2 mx-2" name="keyword" type="text" id="txtSearch" style="width:200px;max-width: 9rem; font-size:1vw;position: absolute;top:0;">
+                                    <button type="submit" class="btn btn-sm rounded-pill mx-2 my-2" style="position: absolute;
                                 top:0;right: 0;background-color:#FFFFFF;border-color: #D3D3D3">
-                                    Filter<i class="bi bi-funnel px-1"></i>
-                                </button>
+                                        Filter<i class="bi bi-funnel px-1"></i>
+                                    </button>
+                                </form>
                             </div>
                         </li>
 
@@ -441,6 +444,7 @@
 
                                 <div class="col-md-1">
                                     <td>
+
                                         <select class="mx-2" style="max-width: 5rem; font-size:1vw;border: none;background: none">
 
                                             <option style="max-width: 5rem; font-size:1vw;" th:each = "category : ${T(spring.example.petclinic.domain.Category).values()}"
@@ -460,14 +464,18 @@
                                     </td>
                                 </div>
 
-                                <div class="col-md-1">
-                                    <td>
-                                        <select  onchange="this.className=this.options[this.selectedIndex].className" class="mx-1" style="max-width: 4rem; font-size:1vw;border: none;">
-                                            <option style="max-width: 4rem; font-size:1vw;" th:each = "priority : ${T(spring.example.petclinic.domain.Priority).values()}"
-                                                    th:class="${priority.name}" th:value="${priority}" th:selected="${priority == us.priority}" th:text="${priority.name}"></option>
-                                        </select>
-                                    </td>
-                                </div>
+
+                                    <div class="col-md-1">
+                                        <td>
+
+                                            <select  onchange="this.className=this.options[this.selectedIndex].className" class="mx-1" style="max-width: 4rem; font-size:1vw;border: none;">
+                                                <option style="max-width: 4rem; font-size:1vw;" th:each = "priority : ${T(spring.example.petclinic.domain.Priority).values()}"
+                                                        th:class="${priority.name}" th:value="${priority}" th:selected="${priority == us.priority}" th:text="${priority.name}"></option>
+                                            </select>
+
+                                        </td>
+                                    </div>
+
 
 
 
@@ -497,8 +505,9 @@
 
                                 <div class="col-md-1">
                                     <td style="max-width: 3rem; font-size:1vw;">
-                                        <div>
-                                        <span class="dot" style="background-color: #fd5b1b;">
+                                        <div th:switch="${us.caseStatus}">
+                                            <span th:case="'Not Prepared'" class="dot" style="background-color: red"></span>
+                                        <span th:case="'Progress'" class="dot" style="background-color: yellow">
                                         </span>
                                             <span th:text="${us.caseStatus}"></span>
 

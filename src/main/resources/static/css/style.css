@@ -6,6 +6,7 @@ button {
 :root {
     --offcanvas-width: 70px;
     --topNavbarHeight: 56px;
+    --filterwidth:82px;
 }
 .sidebar-nav {
     width: var(--offcanvas-width);
@@ -16,6 +17,12 @@ button {
     border-radius: 50%;
     display: inline-block;
 
+}
+.filter{
+    width: var(--filterwidth);
+}
+.search{
+    right: calc( var(--filterwidth));
 }
 .Low{ background-color:green; }
 

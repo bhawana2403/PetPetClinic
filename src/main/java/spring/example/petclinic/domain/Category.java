@@ -3,7 +3,7 @@ package spring.example.petclinic.domain;
 public enum Category {
     GRIEVANCE ("Grievance"),
     EMPLOYMENT ("Employment"),
-    Security ("Security"),
+    SECURITY ("Security"),
     GENERAL ("General");
 
     private final String name;
