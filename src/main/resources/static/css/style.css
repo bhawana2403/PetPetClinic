@@ -24,11 +24,14 @@ button {
 .search{
     right: calc( var(--filterwidth));
 }
-.Low{ background-color:green; }
+.Low{ background-color:aqua;
+ color:#FFFFFF;
+    border: none;
+}
 
-.Medium{ background-color:blue; }
+.Medium{ background-color: #FFA500;  color:#FFFFFF; border: none;}
 
-.High{ background-color:red; }
+.High{ background-color:#fd5b1b;  color:#FFFFFF; border: none;}
 
 @media (min-width: 992px){
     body{
