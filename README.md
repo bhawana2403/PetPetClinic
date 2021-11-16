@@ -13,9 +13,10 @@ ___
 
 You can then access petclinic here: http://localhost:8080/users
 ## Maximized View 
-![image](https://user-images.githubusercontent.com/47191934/141783425-035babe6-4764-41d9-93bc-9fd8a97f5e55.png)
+![image](https://user-images.githubusercontent.com/47191934/141939180-122be07a-1d01-40ee-acc0-f6d5925b28ce.png)
+
 ## Minimized View
-![image](https://user-images.githubusercontent.com/47191934/141796295-01f60079-21c6-4457-a261-798b9bf7c295.png)
+![image](https://user-images.githubusercontent.com/47191934/141939613-48084d3d-b27d-41ff-854c-a650d53a2ac6.png)
 
 ## Database Configuration
 In its default configuration, PetPetclinic uses an in-memory database (H2) which gets populated at startup with data. The h2 console is automatically exposed at http://localhost:8080/h2-console and it is possible to inspect the content of the database using the jdbc:h2:mem:testdb url.
