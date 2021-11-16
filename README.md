@@ -13,7 +13,8 @@ ___
 
 You can then access petclinic here: http://localhost:8080/users
 ## Maximized View 
-![image](https://user-images.githubusercontent.com/47191934/141783425-035babe6-4764-41d9-93bc-9fd8a97f5e55.png)
+![image](https://user-images.githubusercontent.com/47191934/141939180-122be07a-1d01-40ee-acc0-f6d5925b28ce.png)
+
 ## Minimized View
 ![image](https://user-images.githubusercontent.com/47191934/141796295-01f60079-21c6-4457-a261-798b9bf7c295.png)
 
