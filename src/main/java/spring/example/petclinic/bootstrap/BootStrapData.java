@@ -90,7 +90,7 @@ public class BootStrapData implements CommandLineRunner {
         u5.setNature(Nature.HEALTH);
         u5.setCaseReporter("Tanner");
         u5.setCaseStatus("Progress");
-        userRepository.save(u1);
+        userRepository.save(u5);
 
         User u6 = new User();
         u6.setCaseNo(127);
